@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Login</title>
+    <link rel="stylesheet" href="src/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/CSS/responsivo.css">
+</head>
+<body>
+
+    <!--CABEÇALHO / HEADER-->
+
+    <header>
+
+        <h2 class="logo">Logo</h2>
+        <div class="menu-icon" id="menu-icon">&#x2630;</div>
+        <nav class="abas" id="abas">
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+            <button class="btn-login-popup">Login</button>
+        </nav>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DE LOGIN -->
+
+    <main class="conteudo-principal" id="conteudo-principal">
+
+        <span class="ico-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <div class="conteudo-login">
+
+            <h2>Login</h2>
+
+            <form action="#">
+
+                <div class="input-box">
+
+                    <span class="ico"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+
+                </div>
+
+                <div class="input-box">
+
+                    <span class="ico"><ion-icon name="key"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Senha</label>
+
+                </div>
+
+                <div class="lembrar-me-esqueceu">
+
+                    <label><input type="checkbox" id="lembrar-me"> Lembrar-me</label>
+                    <a href="#" id="esqueceu">Esqueceu a senha?</a>
+
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+                <div class="registro-login">
+
+                    <p>Não tem uma conta?<a href="#" class="registrar-link"> Cadastrar-se</a>
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL DE REGISTRO -->
+
+        <div class="conteudo-cadastro">
+
+            <h2>Cadastro</h2>
+
+            <form action="#">
+
+                <div class="input-box">
+
+                    <span class="ico">
+                        <ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Nome</label>
+
+                </div>
+
+                <div class="input-box">
+
+                    <span class="ico"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+
+                </div>
+
+                <div class="input-box">
+
+                    <span class="ico"><ion-icon name="key"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Senha</label>
+
+                </div>
+
+                <div class="lembrar-me-esqueceu">
+
+                    <label><input type="checkbox" id="termos"> Eu concordo com os termos e condições</label>
+                    
+
+                </div>
+
+                <button type="submit" class="btn">Cadastrar</button>
+
+                <div class="registro-login">
+
+                    <p>Já possui uma conta?<a href="#" class="login-link"> Fazer login</a>
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

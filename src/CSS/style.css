@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: bottom; 
+
+}
+
+/*------HEADER------*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between; /*Espaço entre os elementos*/
+    align-items: center;
+    /* z-index: 99; */
+}
+
+header > h2.logo {
+    font-size: 2em;
+    color: white;
+    user-select: none; /*Esse texto não é selecionável pelo usuário, isso significa que, quando o usuário tentar clicar e arrastar o cursor do mouse sobre o texto dentro desse elemento, o texto não será destacado e não poderá ser copiado para a área de transferência.*/
+}
+
+header > div.menu-icon {
+    display: none;
+}
+
+header a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    text-shadow: 1px 2px 3px black;
+}
+
+header a::after { /*Criar uma barrinha inferior*/
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    /* transform-origin: left; Origem da barrinha*/
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+header a:hover::after {
+    transform: scaleX(1); /*Adiciona animações na barrinha abaixo de cada aba do navbar*/
+}
+
+header button.btn-login-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: all .5s;
+}
+
+header button.btn-login-popup:hover {
+    background: white;
+    color: #162938;
+}
+
+/*------ CONTEÚDO PRINCIPAL DE LOGIN / MAIN LOGIN ------*/
+
+main.conteudo-principal {
+    position: relative;
+    width: 400px;
+    height: 480px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transition: transform .5s ease, height .2s ease;
+    overflow: hidden; /*O que tiver fora do conteúdo vai ficar desativado*/
+    transform: scale(0); /*Para quando entrarmos no projeto a tela de login não estar apresentável no momento, só quando apertamos no botão login*/
+    
+}
+
+main.conteudo-principal.active-popup {
+    transform: scale(1);
+}
+
+
+main.conteudo-principal.active {
+    height: 520px;
+}
+
+
+main span.ico-close {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background: #162938;
+    color: white;
+    font-size: 1.3em;
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 1;
+    border-top-right-radius: 20px;
+    
+}
+
+
+main div.conteudo-login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+    
+}
+
+main.active div.conteudo-login {
+    transition: transform .18s ease;
+    transform: translateX(-400px);
+    
+}
+
+
+main h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+main div.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+    
+}
+
+main div.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: all .5s;
+}
+
+main div.input-box input:focus~label,
+main div.input-box input:valid~label {
+    top: -5px;
+    transition: all .5s;
+    /*O Email e senha vão levemente para o topo, isso permite que o usuário preencha os campos*/
+}
+
+
+main div.input-box input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px; /*Para o usuário não extrapolar na quantidade de caracteres*/
+}
+
+main div.input-box span.ico {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+main div.lembrar-me-esqueceu {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 30px;
+    align-items: center;
+}
+
+main div.lembrar-me-esqueceu input {
+    accent-color: #162938;
+    margin-right: 3px;
+    
+}
+
+main div.lembrar-me-esqueceu a {
+    color: #162938;
+    text-decoration: none;
+
+}
+
+main div.lembrar-me-esqueceu a:hover {
+    text-decoration: underline;
+    
+}
+
+button.btn {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    transition: all .5s;
+}
+
+button.btn:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+}
+
+main div.registro-login {
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+
+}
+
+main div.registro-login a {
+    text-decoration: none;
+    color: #162938;
+    font-weight: 600;
+}
+
+main div.registro-login a:hover {
+    text-decoration: underline;
+}
+
+/*--- CONTEÚDO PRINCIPAL DE REGISTRO / MAIN REGISTRO ---*/
+
+main div.conteudo-cadastro {
+    position: absolute;
+    transition: transform .18s ease;
+    transform: translateX(400px);
+    
+}
+
+main.active div.conteudo-cadastro {
+    transition: transform .18s ease;
+    transform: translateX(0);
+
+}
