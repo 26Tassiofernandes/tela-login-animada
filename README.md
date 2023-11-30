@@ -10,6 +10,8 @@
 
 <a href="https://26tassiofernandes.github.io/tela-login-animada/" rel="external" >Tela de Login</a>
 
+<img src="https://github.com/26Tassiofernandes/tela-login-animada/assets/86972667/b979ef37-8ef3-46b2-82ed-1b9ce2ca1f91"/>
+
 </div>
 
 ##
